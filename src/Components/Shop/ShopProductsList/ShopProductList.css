@@ -1,0 +1,14 @@
+.shop-product-list{
+    width: 100% !important; 
+    margin: 0% !important;
+    padding: 0% !important;
+}
+
+.shop-product-list ul{
+    list-style: none;
+    display: grid;
+    margin: 0% !important;
+    padding: 0% !important;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+

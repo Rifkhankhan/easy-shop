@@ -1,0 +1,100 @@
+.login-page-container{
+    width: 70%;
+    box-sizing: border-box;
+    box-shadow: 0 .5rem 2rem black;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: white;
+    margin: auto !important;
+    height: 720px;
+  }
+
+.login-page-container .login-page-container-leftSide
+{
+    background-image: url('../../images/albert-dera-ILip77SbmOE-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.login-page-container .login-page-container-rightSide
+{
+    width: 100%;
+    margin: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-page-container .login-page-container-rightSide h2
+{
+   font-size: 30px;
+   color: darkblue;
+   letter-spacing: .2cm;
+   font-style: italic;
+   text-decoration: underline;
+}
+.login-page-container .login-page-container-rightSide .login-page-form
+{
+   margin: auto !important;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 100%;
+}
+
+.login-page-container .login-page-container-rightSide .login-page-form .form-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+
+.login-page-container .login-page-container-rightSide .login-page-form .form-group input{
+    width: 70%;
+    outline: none;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid blue;
+    font-size: large;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+.login-page-container .login-page-container-rightSide .login-page-form .form-group .input-feedback{
+    color: red;
+    margin: 0% !important;
+    padding: 0% !important;
+    width: 70%;
+    text-align: start;
+    
+}
+
+.login-page-container .login-page-container-rightSide .login-page-form button{
+    padding: 1rem ;
+    padding-inline: 2rem;
+    background-color: darkblue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    display: block;
+    width: 70%;
+    margin: auto !important;
+    font-size: larger;
+    font-weight: bolder;
+    transition: all .5s;
+}
+
+.login-page-container .login-page-container-rightSide .login-page-form button:hover{
+    cursor: pointer;
+    background-color: rgb(94, 94, 6);
+    color: white;
+}
+

@@ -1,0 +1,11 @@
+.fruit-container{
+    background-color: white;
+    width: 100%;
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    position: absolute;
+    top: 35px;
+
+}
+

@@ -1,0 +1,32 @@
+
+.bigcardcomponent{
+    width: 96.5%;
+    height: auto !important;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: auto !important;
+    margin-top: 1rem !important;
+}
+
+@media (max-width:850px){
+   
+    .bigcardcomponent{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50% ;
+        margin-top: 0rem !important;
+        margin: auto !important;
+    }
+}
+@media (max-width:600px){
+   
+     .bigcardcomponent{
+        width: 100%;
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 0rem !important;
+        margin: auto !important;
+    }
+}
+

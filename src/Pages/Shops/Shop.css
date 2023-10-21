@@ -1,0 +1,80 @@
+.shop-container{
+    background-color: white;
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh;
+    background: url('../../images//ShoppingMall/pesce-huang-W7PZYROl63Y-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    
+    /* zoom automatically */
+    -webkit-animation:zoom 50s infinite;
+    animation:zoom 50s infinite;
+}
+.shop-container .shop-container-banner {
+    display: inline-block;
+}
+.shop-container .shop-container-banner h1{
+    /* background-image: linear-gradient(to right top,lightblue,rgb(11, 11, 144),rgb(0, 0, 126),rgb(16, 16, 126),lightblue); */
+    margin-inline: 1rem;
+    color: white;
+    font-weight: bolder;
+    font-size: 55px;
+    margin-top: 1rem;
+    text-align: center;
+    
+}
+
+/* cursor blinking */
+/* @keyframes cursor {
+    50% {border-color: transparent}
+    
+} */
+
+/* typing effect */
+/* @keyframes typing {
+    from {width: 0}
+} */
+
+/* .shop-container .shop-container-banner{
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin: auto;
+    margin-inline: 1rem;
+    margin-top: 1.5rem;
+    color: white;
+    font-weight: bolder;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+} */
+@-webkit-keyframes zoom{
+    0%,100%{
+        background-size:100%;
+    }
+   
+
+    50%{
+        background-size: 150%;
+    }
+}
+
+
+@keyframes zoom{
+    0%,100%{
+        background-size:100%;
+    }
+  
+    50%{
+        background-size: 150%;
+    }
+}

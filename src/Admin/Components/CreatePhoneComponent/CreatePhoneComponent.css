@@ -1,0 +1,104 @@
+.CreateFruitComponent
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: auto;
+}
+
+.CreateFruitComponent .CreateFruitComponent-heading
+{
+    margin-left: 1rem;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.CreateFruitComponent  .CreateFruitComponent-form-container
+{
+   display: flex;
+   padding: 1rem;
+   flex-direction: column;
+
+}
+
+.CreateFruitComponent  .CreateFruitComponent-form-container
+ .CreateFruitComponent-form
+{
+   margin: 1rem !important;
+   display: flex;
+   flex-direction: column;
+}
+
+.CreateFruitComponent  .CreateFruitComponent-form-container 
+.CreateFruitComponent-form .CreateFruitComponent-form-group
+{
+   display: grid;
+   grid-template-columns:  20% 70%;
+   margin-top: 1rem;
+}
+
+.CreateFruitComponent  .CreateFruitComponent-form-container 
+.CreateFruitComponent-form .CreateFruitComponent-form-group label
+{
+   font-size: 15px;
+}
+
+.CreateFruitComponent  .CreateFruitComponent-form-container 
+.CreateFruitComponent-form .CreateFruitComponent-form-group input
+{
+   outline: none;
+   padding: 1rem;
+   border-radius: 5px;
+   border: 2px solid lightblue;
+}
+.CreateFruitComponent  .CreateFruitComponent-form-container 
+.CreateFruitComponent-form .CreateFruitComponent-form-group select
+{
+   outline: none;
+   padding: 1rem;
+   border-radius: 5px;
+   border: 2px solid lightblue;
+}
+
+
+.CreateFruitComponent  .CreateFruitComponent-form-container 
+.CreateFruitComponent-form .CreateFruitComponent-form-group textarea
+{
+   outline: none;
+   padding: 1rem;
+   border-radius: 5px;
+   border: 2px solid lightblue;
+}
+.CreateFruitComponent  .CreateFruitComponent-form-container 
+.CreateFruitComponent-form .CreateFruitComponent-form-btn .submit-btn
+{
+  display: block;
+  padding: 0.5rem;
+  padding-inline: 2rem;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width:30%;
+}
+
+.CreateFruitComponent  .CreateFruitComponent-form-container 
+.CreateFruitComponent-form .CreateFruitComponent-form-btn .loading-btn
+{
+  display: block;
+  padding: 0.5rem;
+  padding-inline: 2rem;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+
+}
+
+.CreateFruitComponent-image{
+   background-image: url('../../../images/Fruits/fruits.jpg');
+   width: 100%;
+   height: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}

@@ -1,0 +1,17 @@
+.shop-list{
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    margin: 0% !important;
+    padding: 0% !important;
+    
+}
+
+.shop-list li{
+   
+    margin: 0% !important;
+    padding: 0% !important;
+    
+}
+

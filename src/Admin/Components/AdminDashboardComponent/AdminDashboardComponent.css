@@ -1,0 +1,9 @@
+.AdminDashboardComponent{
+    background-color: red !important;
+    transition:left .4s ease;
+}
+
+.AdminDashboardComponent-fullWidth-toggle{
+    width:calc(100vw - 200px);
+    margin-left: 200px;
+}

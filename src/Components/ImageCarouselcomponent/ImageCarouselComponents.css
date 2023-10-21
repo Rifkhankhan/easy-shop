@@ -1,0 +1,35 @@
+.imageCarouselComponent-container
+{
+    width: 95%;
+    height: 600px;
+    background-color: black;
+   
+    margin-inline: 0.5rem !important;
+    margin-top: 0.3rem;
+   
+}
+@media (max-width:600px) {
+    .imageCarouselComponent-container
+    {
+        width: 100% !important;
+       
+    
+    }
+}
+.imageCarouselComponent-container .slick-dots{
+    display: none !important;
+}
+
+.imageCarouselComponent-container .slick-slider button{
+    display: none !important;
+}
+
+.imageCarouselComponent-container  .imageCarouselComponent-container-image
+{
+    margin: auto !important;
+    width: 100%;
+    height: 600px !important;
+    background: fixed;
+    border-radius: 1px;
+}
+

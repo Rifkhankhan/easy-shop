@@ -1,0 +1,17 @@
+.fruit-list{
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    /* margin: 0% !important; */
+    padding: 0% !important;
+    margin-top: 1rem;
+}
+
+.fruit-list li{
+   
+    margin: 0% !important;
+    padding: 0% !important;
+    
+}
+

@@ -1,0 +1,9 @@
+.admin-pending-page-container{
+    width: 100%;
+    background-color: white;
+    display: grid !important;
+    grid-template-columns: 15% 85% !important;
+    position: absolute;
+    top: 50px;
+ 
+}

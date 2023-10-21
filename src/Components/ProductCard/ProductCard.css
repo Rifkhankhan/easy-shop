@@ -1,0 +1,20 @@
+.product-card{
+    height: 500px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    margin: 0.2rem;
+}
+
+.product-card img{
+    height: 400px;
+    width: 90%;
+    margin-inline: .5rem;
+}
+.product-card h3{
+    padding: 0% !important;
+    display: block;
+    margin: auto;
+}

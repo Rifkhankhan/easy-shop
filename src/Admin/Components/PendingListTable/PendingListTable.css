@@ -1,0 +1,63 @@
+.admin-pending-table-container{
+   width: 100%;
+}
+
+.admin-pending-table-container .pending-table{
+   border: 1px solid black;
+   margin: 1rem;
+   width: 98%;
+   box-shadow: 0 .5px 5px black;
+
+}
+
+.admin-pending-table-container .pending-table tr{
+  border: 1px solid blue;
+   padding: 1rem;
+   width: 100%;
+}
+.admin-pending-table-container .pending-table tr:not(:first-child):hover{
+  background-color: aqua;
+  cursor: pointer;
+ }
+.admin-pending-table-container .pending-table tr th{
+   
+   padding: 1rem;
+   text-align: center;
+   background-color: black;
+   color: white;
+}
+.admin-pending-table-container .pending-table tr th:not(:last-child){
+   
+  border-right: 1px solid white;
+}
+.admin-pending-table-container .pending-table tr th,td{
+   
+    padding: 1rem;
+    text-align: center;
+    font-size: 17px;
+ }
+ .admin-pending-table-container .pending-table tr .btn-div{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   width: 100%;
+   margin: auto;
+ }
+
+ .admin-pending-table-container .pending-table tr .btn-div button{
+   border: none;
+   border-radius: 5px;
+   padding: .5rem;
+   width: 30%;
+ }
+ .admin-pending-table-container .pending-table tr .btn-div button:first-child{
+   background-color: green;
+   color: white;
+   font-weight: 600;
+ }
+
+ .admin-pending-table-container .pending-table tr .btn-div button:last-child{
+   background-color: red;
+   color: white;
+   font-weight: 600;
+ }

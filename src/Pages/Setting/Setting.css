@@ -1,0 +1,179 @@
+.setting-container{
+    width: 100%;
+    position: absolute;
+    top: 50px;
+}
+
+.setting-container .setting-information{
+    display: grid;
+    grid-template-columns: 40% 1% 59%;
+    margin-inline: 2%;
+    grid-row-gap: 0px !important;
+    grid-column-gap: 0px !important;
+    margin-top: 1rem;
+    height: 90vh;
+}
+
+.setting-container .setting-information .setting-img{
+    width: 100%;
+    height: 80vh;
+    border-radius: 50%;
+    margin: auto !important;
+    display: block;
+}
+
+.setting-image-information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.setting-image-information .setting-image-information-btn1{
+    width: 50%;
+    font-weight: 600;
+    font-size: 17px;
+    border: none;
+    padding: 0.5rem;
+    padding-inline: 2rem;
+    margin-top: 1rem;
+    color: white;
+    border-radius: 5px;
+    background:linear-gradient(to right,pink,rgba(255, 0, 0, 0.73),red,pink);
+    transition: all 0.1s;
+}
+
+.setting-image-information .setting-image-information-btn1:hover{
+   outline: 2px solid darkblue;
+}
+
+.setting-image-information .setting-image-information-btn2{
+    width: 50%;
+    font-weight: 600;
+    font-size: 17px;
+    border: none;
+    padding: 0.5rem;
+    padding-inline: 2rem;
+    margin-top: 1rem;
+    color: black;
+    outline: 1px solid red;
+    border-radius: 5px;
+    background-color: white;
+    transition: all 0.1s;
+
+}
+.setting-image-information .setting-image-information-btn2:hover{
+    outline: 2px solid darkblue;
+
+
+}
+
+
+
+.setting-container .setting-information .line{
+   
+    height: 100% !important;
+    background-color: black !important;
+    width: 1.5px !important;
+    margin: auto;
+}
+
+.setting-container .setting-information .setting-information-data{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+
+.setting-container .setting-information .setting-information-data h3{
+    display: block;
+    width: 100%;
+}
+
+.setting-container .setting-information 
+.setting-information-data .setting-basic-info-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 2%;
+}
+
+.setting-container .setting-information 
+.setting-information-data .setting-basic-info-container .setting-basic-info-group{
+   margin-top: 1rem;
+}
+
+.setting-container .setting-information 
+.setting-information-data .setting-basic-info-container input{
+    width: 90%;
+    border: 1px solid rgb(51, 15, 180);
+    border-radius: 5px;
+    padding: 1rem;
+    outline: none;
+}
+
+
+.setting-card-list{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: auto !important;
+}
+
+.setting-card-list-container{
+    display: grid;
+    width: 100%;
+   grid-template-columns: auto auto auto auto; 
+}
+.setting-sub-heading{
+    margin-left:1rem ;
+}
+
+.setting-basic-info-container{
+    margin-left: 0px;
+}
+
+.setting-container .setting-information 
+.setting-information-data .setting-information-data-btns{
+    /* width: 100%;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 2%;
+   margin-top: 1rem; */
+
+   margin: auto !important;
+    display: flex;
+    justify-content: center;
+}
+
+.setting-container .setting-information 
+.setting-information-data .setting-information-data-btns button{
+   /* width: 90%;
+   border: none;
+   padding: 1rem;
+   font-size: 17px;
+   font-weight: 500;
+   border-radius: 5px; */
+
+   width: 50%;
+   border: none;
+   padding: 1rem;
+   font-size: 17px;
+   font-weight: 500;
+   border-radius: 5px;
+   margin: 1rem; 
+
+}
+
+.setting-container .setting-information 
+.setting-information-data .setting-information-data-btns button:first-child{
+  background-color: darkblue;
+  color: white;
+}
+
+.setting-container .setting-information 
+.setting-information-data .setting-information-data-btns button:last-child{
+  background-color: red;
+  color: white;
+}

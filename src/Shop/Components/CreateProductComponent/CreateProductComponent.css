@@ -1,0 +1,105 @@
+.CreateShopComponent
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: auto;
+}
+
+.CreateShopComponent .CreateShopComponent-heading
+{
+    margin-left: 1rem;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.CreateShopComponent  .CreateShopComponent-form-container
+{
+   display: flex;
+   padding: 1rem;
+   flex-direction: column;
+
+}
+
+.CreateShopComponent  .CreateShopComponent-form-container
+ .CreateShopComponent-form
+{
+   margin: 1rem !important;
+   display: flex;
+   flex-direction: column;
+}
+
+.CreateShopComponent  .CreateShopComponent-form-container 
+.CreateShopComponent-form .CreateShopComponent-form-group
+{
+   display: grid;
+   grid-template-columns:  20% 70%;
+   margin-top: 1rem;
+}
+
+.CreateShopComponent  .CreateShopComponent-form-container 
+.CreateShopComponent-form .CreateShopComponent-form-group label
+{
+   font-size: 15px;
+}
+
+.CreateShopComponent  .CreateShopComponent-form-container 
+.CreateShopComponent-form .CreateShopComponent-form-group input
+{
+   outline: none;
+   padding: 1rem;
+   border-radius: 5px;
+   border: 2px solid lightblue;
+}
+.CreateShopComponent  .CreateShopComponent-form-container 
+.CreateShopComponent-form .CreateShopComponent-form-group select
+{
+   outline: none;
+   padding: 1rem;
+   border-radius: 5px;
+   border: 2px solid lightblue;
+}
+
+
+.CreateShopComponent  .CreateShopComponent-form-container 
+.CreateShopComponent-form .CreateShopComponent-form-group textarea
+{
+   outline: none;
+   padding: 1rem;
+   border-radius: 5px;
+   border: 2px solid lightblue;
+}
+.CreateShopComponent  .CreateShopComponent-form-container 
+.CreateShopComponent-form .CreateShopComponent-form-btn .submit-btn
+{
+  display: block;
+  padding: 0.5rem;
+  padding-inline: 2rem;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width:30%;
+}
+
+.CreateShopComponent  .CreateShopComponent-form-container 
+.CreateShopComponent-form .CreateShopComponent-form-btn .loading-btn
+{
+  display: block;
+  padding: 0.5rem;
+  padding-inline: 2rem;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+
+}
+
+.CreateShopComponent-image{
+   background-image: url('../../../images/Fruits/fruits.jpg');
+
+   width: 100%;
+   height: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}

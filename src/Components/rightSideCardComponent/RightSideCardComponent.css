@@ -1,0 +1,11 @@
+.RightSideCardComponent{
+    width: 20% !important;
+    height: 100% !important;
+    position: fixed;
+    right: 0;
+    top: 7%;
+    z-index: 1;
+    overflow: auto;
+    background-color: rgba(31, 22, 139, 0.889) ;
+    transition:  all 1s ease;
+}

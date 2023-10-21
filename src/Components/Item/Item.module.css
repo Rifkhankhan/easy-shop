@@ -1,0 +1,78 @@
+.fruitcard{
+    height:350px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-fruits: center;
+    margin: 1rem;
+    transition: all 0.5s;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0% !important;
+    border: 1px solid blue;
+    position: relative;
+}
+.fruitcard:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 1px 10px;
+}
+
+.fruitcard .image{
+    height: 100%;
+    width: 100% !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.fruitcard .likelogo{
+    position: absolute;
+    width: 12%;
+    right: 1%;
+    top: 1%;
+    transition: all 0.3s;
+}
+
+.fruitcard .likelogo:hover{
+   transform: scale(1.1);
+}
+   
+
+.fruitcard .fruitcardfooter{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    width: 100%;
+}
+
+.fruitcard .fruitcardfooter h3{
+    font-style: italic;
+    margin: auto;
+}
+
+.fruitcard .fruitcardfooter button{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: rgb(6, 6, 78);
+    color: white;
+    font-weight: 700;
+    font-size: larger;
+    transition: all 0.3s;
+    padding-block: 10px;
+}
+
+.fruitcard .fruitcardfooter button:hover{
+   
+    background-color:rgb(152, 39, 8);
+    color: white;
+    font-weight: 700;
+    
+}
+
+@media (max-width:520px) {
+    .fruitcard{
+        width: 80% !important;
+    }
+    
+}

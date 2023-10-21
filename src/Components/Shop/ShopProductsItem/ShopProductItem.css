@@ -1,0 +1,24 @@
+.shop-product-item{
+    height: 500px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    border-left: .1px solid saddlebrown;
+    border-bottom: .1px solid saddlebrown;
+
+}
+
+
+.shop-product-item img{
+    height: 400px;
+    width: 90%;
+    padding: 0% !important;
+    margin: auto !important;
+}
+.shop-product-item h3{
+    padding: 0% !important;
+    display: block;
+    margin: auto;
+    padding: 0% !important;
+}
