@@ -1,11 +1,11 @@
-.fruit-container{
-    background-color: white;
-    width: 100%;
-    display: flex !important;
-    justify-content: center !important;
-    flex-direction: column !important;
-    position: absolute;
-    top: 35px;
-
+.recipe-container {
+	width: 100%;
+	display: flex !important;
+	justify-content: center !important;
+	flex-direction: column !important;
+	background: url('../../images/Recipes/kam-idris-vqMQN9zImG4-unsplash.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	object-fit: cover;
+	background-size: cover;
 }
-

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { getProducts } from "../../Actions/ProductAction";
 import ItemList from "../../Components/Item/ItemList";
-
+import './SearchedProducts.css'
 const SearchedProducts = () => {
     const location = useLocation()
     const query = location.state
@@ -17,7 +17,8 @@ const SearchedProducts = () => {
 
     console.log(filterProducts);
 
-  return <div className="fruit-container">
+  return <div className="search-result-container">
+    <h2>{filterProducts.length} results for "{query}"</h2>
     <ItemList shops={filterProducts} />
   </div>;
 };

@@ -1,0 +1,14 @@
+.clothes-page-container{
+    background-color: white;
+    width: 100%;
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    
+    background-image: url('../../images/neil-rosenstech-KG-9TUrAFsg-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+

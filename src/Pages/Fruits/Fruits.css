@@ -4,8 +4,8 @@
     display: flex !important;
     justify-content: center !important;
     flex-direction: column !important;
-    position: absolute;
-    top: 35px;
+    /* position: absolute;
+    top: 35px; */
 
 }
 

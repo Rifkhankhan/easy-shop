@@ -65,7 +65,10 @@ function App() {
 				{/* <Header sideBarBtnHandler = {sideBarBtnHandler} showSideBar={showSideBar}/> */}
 
 				{/* {showSideBar && <SideBar  sideBarBtnHandler = {sideBarBtnHandler} showSideBar={showSideBar} />} */}
-				{query.length === 0 && !searcClick && (
+
+				<Routers />
+				{/* search scope */}
+				{/* {query.length === 0 && !searcClick && (
 					<Routers searcClick={searcClick} />
 				)}
 				{query.length === 0 && searcClick && (
@@ -74,7 +77,7 @@ function App() {
 				{query.length > 0 && searcClick && (
 					<NetflixSearchComponent items={searchItems} />
 				)}
-				{query.length > 0 && !searcClick && <Routers searcClick={searcClick} />}
+				{query.length > 0 && !searcClick && <Routers searcClick={searcClick} />} */}
 			</BrowserRouter>
 		</div>
 	)

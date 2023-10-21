@@ -1,4 +1,4 @@
-import {  Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Home from '../Pages/Home/Home'
 import Mobiles from '../Pages/Mobiles/Mobiles'
 import Shops from '../Pages/Shops/Shop'
@@ -17,15 +17,15 @@ import CreateFruit from '../Admin/Pages/Fruit/CreateFruit.js/CreateFruit'
 import Profile from '../Pages/Profile/Profile'
 import Setting from '../Pages/Setting/Setting'
 
-
 import PendingListPage from '../Admin/Pages/PendingListPage/PendingListPage'
 import ProcessingListPage from '../Admin/Pages/ProcessingListPage/ProcessingListPage'
 import CancelListPage from '../Admin/Pages/CancelListPage/CancelListPage'
 import ReturnListPage from '../Admin/Pages/ReturnListPage/ReturnListPage'
 import Meals from '../Pages/Meals/Meals'
 import SearchedProducts from '../Pages/SearchedProducts/SearchedProducts'
-
-
+import Clothes from '../Pages/Clothes/Clothes'
+import Shoes from '../Pages/Shoes/Shoes'
+import Electronics from '../Pages/Electroics/Electronics'
 
 const Routers = () => {
 	return (
@@ -36,6 +36,9 @@ const Routers = () => {
 			<Route path="/register" element={<RegisterPage />} />
 			<Route path="/Mobiles" element={<Mobiles />} />
 			<Route path="/Fruits" element={<Fruits />} />
+			<Route path="/Shoes" element={<Shoes />} />
+			<Route path="/Electronics" element={<Electronics />} />
+			<Route path="/Clothes" element={<Clothes />} />
 			<Route path="/Meals" element={<Meals />} />
 			<Route path="/Fruits/:id" element={<ProductDetails />} />
 			<Route path="/Shops" element={<Shops />} />
@@ -43,9 +46,6 @@ const Routers = () => {
 			<Route path="/profile" element={<Profile />} />
 			<Route path="/setting" element={<Setting />} />
 			<Route path="/searched" element={<SearchedProducts />} />
-
-
-
 
 			{/* admin */}
 			<Route path="/admin-home" element={<Dashboard />} />
@@ -63,7 +63,6 @@ const Routers = () => {
 			<Route path="/admin-processing" element={<ProcessingListPage />} />
 			<Route path="/admin-cancel" element={<CancelListPage />} />
 			<Route path="/admin-return" element={<ReturnListPage />} />
-
 		</Routes>
 	)
 }
