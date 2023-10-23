@@ -12,6 +12,12 @@ import star from '.././../../images/star.png'
 import rating from '../../../images/rating.png'
 import mouse from '../../../images/black-mouse.jpg'
 import man from '../../../images/hardik-sharma-CrPAvN29Nhs-unsplash.jpg'
+import plus from '../../../images/plus.png'
+
+// Task to do in this view page
+// 1. need to add new image
+// 2. need to edit and delete images
+// 3. need to edit product
 
 const ViewProduct = () => {
 	const { id } = useParams()
@@ -23,8 +29,7 @@ const ViewProduct = () => {
 	const authData = useSelector(state => state.auth.authData)
 	const fruit = useSelector(state => state.fruit.fruit)
 	const [selectedFile, setSelectedFile] = useState()
-	const [displayImage,setDisplayImage] = useState(fruit.images)
-	
+	const [displayImage, setDisplayImage] = useState(fruit?.images)
 
 	// edit image
 	const [file, setFile] = useState()
@@ -80,7 +85,7 @@ const ViewProduct = () => {
 	}
 
 	// edit image handler
-	const pickImageHandler = (e) => {
+	const pickImageHandler = e => {
 		console.log(e.currentTarget.getAttribute('src'))
 		setDisplayImage(e.currentTarget.getAttribute('src'))
 	}
@@ -160,8 +165,8 @@ const ViewProduct = () => {
 						/>
 					) : (
 						<img
-							className="editable-product-image"
 							src={displayImage}
+							className="editable-product-image"
 							alt="profile-image"
 							onClick={() => imageRef?.current.click()}
 						/>
@@ -207,25 +212,15 @@ const ViewProduct = () => {
 							className="editable-product-image"
 							alt=""
 						/>
-						<img
-							src={star}
-							onClick={pickImageHandler}
-							className="editable-product-image"
-							alt=""
-						/>
+
 						<img
 							src={man}
 							onClick={pickImageHandler}
 							className="editable-product-image"
 							alt=""
 						/>
-						<img
-							src={mouse}
-							onClick={pickImageHandler}
-							className="editable-product-image"
-							alt=""
-						/>
-					
+
+						<img src={plus} alt="" className="plus-btn" />
 					</div>
 					<div className="payment-details">
 						<button onClick={() => cardHandler(id)}>Add to card</button>

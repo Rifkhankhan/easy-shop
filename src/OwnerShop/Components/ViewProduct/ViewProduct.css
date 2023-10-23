@@ -75,13 +75,15 @@
  } 
 
  .view-product-container .product-details-data  .product-images{
-  width: 100%;
-  overflow: auto;
-  display: flex;
-  flex-direction: row;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: auto !important;
  }
+
+
  .view-product-container .product-details-data  .product-images img{
-   width: 150px;
+   width: 100px;
    margin: 2px;
  }
  .product-details-data .payment-details {
