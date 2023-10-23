@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+}
+.owner-sidebar-container{
+   width: 100%;
+   transition:  left  .4s ease;
+   position: relative;
+   transition: all 0.5s ease-in-out;
+
+}
+.owner-sidebar{
+   width: 100%;
+   min-height: 100vh;
+   height: 100%;
+   background-color: #1b1b1b;
+   transition: all 0.5s ease-in-out;
+
+}
+
+.owner-sidebar-container  .arrow{
+   position: absolute;
+   width: 30px;
+   top: 5px;
+}
+.owner-sidebar-container .arrow:hover{
+   transform: scale(1.1);
+   cursor: pointer;
+}
+.owner-sidebar-container  .left-arrow{
+   right: -15px;
+}
+.owner-sidebar-container  .right-arrow{
+  left: 15px;
+}
+/* .owner-sidebar .app-heading{
+   color: black;
+   text-align: center;
+   font-size: 25px;
+   background-color: aquamarine;
+
+} */
+
+
+.owner-sidebar .text{
+    color: white;
+    font-family: 25px;
+    font-weight: 600;
+    line-height: 65px;
+    text-align: center;
+    background: #1e1e1e;
+    letter-spacing: 1px;
+}
+
+.owner-sidebar .owner-sidebar-ul{
+    background-color: #1b1b1b;
+    height: 100%;
+
+    width: 100%;
+    list-style: none;
+   /* transition: all 0.5s ease-in-out; */
+
+}
+
+.owner-sidebar .owner-sidebar-ul li{
+    line-height: 40px;
+    list-style: none;
+}
+.owner-sidebar .owner-sidebar-ul li a{
+   color: white;
+   display: block;
+   width: 100%;
+   padding-left: 32px;
+   text-decoration: none;
+   border-left: 3px solid transparent;
+   border-right: 3px solid transparent;
+   font-size: 17px;
+}
+.owner-sidebar .owner-sidebar-ul li a:hover{
+    color: cyan;
+    
+    background: #1e1e1e;
+    border-left-color: cyan;
+    border-right-color: cyan;
+
+ }
+
+ .owner-sidebar .owner-sidebar-ul .owner-sidebar-ul-ul{
+    position: static;
+    display: none;
+ }
+
+
+
+ .owner-sidebar .owner-sidebar-ul .shop-show {
+    display: block;
+ }
+
+ .owner-sidebar .owner-sidebar-ul .fruit-show {
+    display: block;
+ }
+
+ .owner-sidebar .owner-sidebar-ul .phone-show {
+   display: block;
+}
+
+
+ .owner-sidebar .owner-sidebar-ul .owner-sidebar-ul-ul li{
+    line-height: 30px;
+ }
+
+ .owner-sidebar .owner-sidebar-ul .owner-sidebar-ul-ul li a{
+   font-size: 15px;
+   padding-left: 50px;
+ }
+
+ /* transform:translateY(-50%) rotate(-180deg)(*/
+
+
+/* min-width : 1200 */
+@media screen and (min-width: 1200px) {
+
+   .owner-sidebar-container .sidebar-humber{
+      width: 30px;
+      top: 5px;
+      left: 15px;
+   }
+ }

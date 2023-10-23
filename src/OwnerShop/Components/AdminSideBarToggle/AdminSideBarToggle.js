@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef } from "react";
-import './AdminSideBar.css'
+import './AdminSideBarToggle.css'
 import {Link, Navigate, useNavigate} from 'react-router-dom'
 
-const AdminSideBar = () => {
+const AdminSideBarToggle = () => {
 
     const handleClick = (e) => {
         e.preventDefault()
@@ -40,11 +40,11 @@ const AdminSideBar = () => {
         //  }
 
            // when show and hide sidebar change the width of admin Dashboard component
-        //    document.getElementsByClassName('AdminDashboardComponent')[0].classList.toggle('AdminDashboardComponent-fullWidth-toggle');
+           document.getElementsByClassName('AdminDashboardComponent')[0].classList.toggle('AdminDashboardComponent-fullWidth-toggle');
 
     }
 
-  return  <div className="admin-sidebar-container">
+    return  <div className="admin-sidebar-container">
  
     <nav className="admin-sidebar" >
         <div className="app-heading">Home Delivery</div>
@@ -58,42 +58,27 @@ const AdminSideBar = () => {
                     <li><Link to='/create-shop'>Create Shop</Link></li>
                 </ul>
             </li>
-            {/* <li>
+            <li>
                 <Link  className="fruit-btn"  onClick={handleClick}>Fruits</Link>
                 <ul className=" admin-sidebar-ul-ul fruit-ul">
                     <li><Link to='/admin-fruit'>Fruits</Link></li>
-                    <li><Link to='/create-fruit'>Create fruit</Link></li>
+                    <li><Link >Create fruit</Link></li>
                 </ul>
             </li>
             <li>
                 <Link className="phone-btn" onClick={handleClick}>Phones</Link> 
                 <ul className=" admin-sidebar-ul-ul phone-ul">
-                    <li><Link to='/admin-phone'>Phones</Link></li>
-                    <li><Link to='/create-phone'>Create Phone</Link></li>
+                    <li><a href="#">Phones</a></li>
+                    <li><a href="#">Create Phone</a></li>
                 </ul>
-            </li> */}
-
-            <li>
-                <Link to='/admin-pending'>Pending List</Link>
-            </li>
-
-            <li>
-                <Link to='/admin-processing'>Processing List</Link>
-            </li>
-
-            <li>
-                <Link to='/admin-cancel'>Cancel List</Link>
-            </li>
-
-            <li>
-                <Link to='/admin-return'>Return List</Link>
             </li>
         </ul>
     </nav>
 
   </div>
  
+ 
   
 };
 
-export default AdminSideBar;
+export default AdminSideBarToggle;

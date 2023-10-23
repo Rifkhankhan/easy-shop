@@ -1,0 +1,60 @@
+.admin-return-table-container {
+	width: 100%;
+}
+
+.admin-return-table-container .return-table {
+	border: 1px solid black;
+	margin: 1rem;
+	width: 98%;
+	box-shadow: 0 0.5px 5px black;
+}
+
+.admin-return-table-container .return-table tr {
+	border: 1px solid blue;
+	padding: 1rem;
+	width: 100%;
+}
+.admin-return-table-container .return-table tr:not(:first-child):hover {
+	background-color: aqua;
+	cursor: pointer;
+}
+.admin-return-table-container .return-table tr th {
+	padding: 1rem;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+.admin-return-table-container .return-table tr th:not(:last-child) {
+	border-right: 1px solid white;
+}
+.admin-return-table-container .return-table tr th,
+td {
+	padding: 1rem;
+	text-align: center;
+	font-size: 17px;
+}
+.admin-return-table-container .return-table tr .btn-div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100%;
+	margin: auto;
+}
+
+.admin-return-table-container .return-table tr .btn-div button {
+	border: none;
+	border-radius: 5px;
+	padding: 0.5rem;
+	width: 30%;
+}
+.admin-return-table-container .return-table tr .btn-div button:first-child {
+	background-color: green;
+	color: white;
+	font-weight: 600;
+}
+
+.admin-return-table-container .return-table tr .btn-div button:last-child {
+	background-color: red;
+	color: white;
+	font-weight: 600;
+}

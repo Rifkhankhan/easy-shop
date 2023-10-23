@@ -1,0 +1,25 @@
+.admin-fruit-card{
+    height:350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    transition: all 0.5s;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0% !important;
+}
+.admin-fruit-card:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 1px 10px;
+}
+
+
+
+.admin-fruit-card img{
+    height: 80%;
+    width: 90% !important;
+    margin: auto !important;
+}

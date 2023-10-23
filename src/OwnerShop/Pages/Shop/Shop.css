@@ -1,0 +1,7 @@
+.admin-shop-page{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    position: absolute !important;
+    top: 50px !important;
+}

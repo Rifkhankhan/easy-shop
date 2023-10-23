@@ -1,0 +1,173 @@
+.view-product-root-container{
+   margin: auto !important;
+   width: 100%;
+ }
+
+.view-product-container{
+  margin-inline: auto !important;
+  display: grid;
+  background-color: white;
+  width: 100%;
+  grid-template-columns: 30% 70%;
+  row-gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
+}
+.view-product-container .editable-product-image{
+  transition: all .5s ease-in-out;
+ 
+ }
+.view-product-container .editable-product-image:hover{
+ cursor: pointer;
+ transform: scale(1.02);
+
+}
+
+
+.view-product-container .product-details-image,
+.view-product-container .product-details-data{
+   width:100%;
+   padding: 5px;
+}
+.view-product-container .product-details-image{
+   width:100%;
+   padding: 10px;
+   border-bottom-left-radius: 5px;
+}
+
+.view-product-container .product-details-image{
+   height: 100%;
+} 
+ .view-product-container .product-details-image img{
+    height: 100%;
+    width: 100%;
+    margin: auto !important; 
+    border-radius: 5px;
+ }
+
+.review-stars{
+   display: flex;
+   flex-direction: row;
+   margin-block: 8px;
+}
+.review-stars img{
+   width: 25px;
+}
+.view-product-container .product-details-data .price{
+   margin-block: 8px;
+   font-size: 30px;
+   font-weight: 500;
+ } 
+ .view-product-container .product-details-data .existence{
+   margin-block: 8px;
+   font-size: 20px;
+   font-weight: 500;
+   color: red;
+ }  
+
+ .view-product-container .product-details-data .shop-details{
+   width: 100%;
+   display: grid;
+   column-gap: 55px;
+   grid-template-columns: 20% 80%;
+   margin-block: 5px;
+ } 
+
+ .view-product-container .product-details-data  .product-images{
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+ }
+ .view-product-container .product-details-data  .product-images img{
+   width: 150px;
+   margin: 2px;
+ }
+ .product-details-data .payment-details {
+   width: 80%;
+   margin-top: 15px;
+   margin-inline: auto;
+   display: flex;
+   flex-direction: row;
+ }
+ .view-product-container .product-details-data  .payment-details button{
+    display: block;
+    width: 40%;
+    border: none;
+    padding: 10px;
+    padding-inline: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px;
+    font-weight: bolder;
+    font-size: large;
+    margin: auto;
+ }
+ .view-product-container .product-details-data  .payment-details button:first-child{
+  background-color: blue;
+  color: white;
+}
+.view-product-container .product-details-data  .payment-details button:last-child{
+   background-color: yellow;
+   color: black;
+ }
+ .view-product-container .product-details-data .payment-details button:hover{
+   cursor: pointer;
+   background-color: rgb(45, 151, 16);
+   color: rgb(255, 255, 255);
+ } 
+ 
+ .product-details-root-container .related-products{
+   width: 95% !important;
+   display: flex;
+   flex-direction: column;   
+   margin-top: 1rem;
+   margin-inline: auto;
+ }
+ .product-details-root-container .related-products h3{
+   font-size: 30px;
+   margin-bottom: 1rem;
+ }
+ .product-details-desc{
+   font-weight: 550;
+   font-size: 20px;
+ }
+
+ @media (max-width:600px) {
+
+   .view-product-container{
+
+      top: 6rem;
+
+    }
+    
+     .view-product-container .product-details-image,
+     .view-product-container .product-details-data{
+      width:100%;
+      padding: 1rem;
+      border: none;
+   }
+
+   .view-product-container .product-details-image{
+      width:100%;
+      padding: 1rem;
+      border: none;
+      border-bottom: 1px solid blue;
+   }
+   .view-product-container .product-details-data{
+      width:100%;
+      padding: 1rem;
+      border: none;
+      border-bottom-right-radius: none;
+   }
+
+   .view-product-container .related-products{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      top: 25rem;
+    }
+   
+ }
+
+

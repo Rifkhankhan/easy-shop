@@ -27,6 +27,13 @@ import Clothes from '../Pages/Clothes/Clothes'
 import Shoes from '../Pages/Shoes/Shoes'
 import Electronics from '../Pages/Electroics/Electronics'
 
+// owner shop
+import ShopDashboard from '../OwnerShop/Pages/Dashboard/Dashboard'
+import ShopDashboardComponent from '../OwnerShop/Components/ShopDashboardComponent/ShopDashboardComponent'
+import ProductsComponent from '../OwnerShop/Components/ProductsComponent/ProductsComponent'
+import CreateProduct from '../OwnerShop/Components/CreateFruitComponent/CreateFruitComponent'
+import ViewProduct from '../OwnerShop/Components/ViewProduct/ViewProduct'
+
 const Routers = () => {
 	return (
 		<Routes>
@@ -47,6 +54,32 @@ const Routers = () => {
 			<Route path="/setting" element={<Setting />} />
 			<Route path="/searched" element={<SearchedProducts />} />
 
+			{/* Shops owner pages */}
+			<Route path="/owner" element={<ShopDashboard />}>
+				<Route index element={<ShopDashboardComponent />} />
+				<Route path="products" element={<ProductsComponent />} />
+				<Route path="create-product" element={<CreateProduct />} />
+				<Route path="products/:id" element={<ViewProduct />} />
+				{/* <Route path="/view-product" element={<Dashboard />} /> */}
+				{/* <Route path="/pending-products" element={<PendingListPage />} /> */}
+				{/* <Route path="/processing-products" element={<ProcessingListPage />} /> */}
+				{/* <Route path="/cancel-products" element={<CancelListPage />} /> */}
+				{/* <Route path="/return-products" element={<ReturnListPage />} /> */}
+			</Route>
+
+			{/* <Route path="/netflix/profile" element={<NetflixProfile />}>
+					<Route index element={<Movies />} />
+					<Route path="movies" element={<Movies />} />
+					<Route path="series" element={<Series />} />
+					<Route path="users" element={<Users />} />
+					<Route path="likes" element={<LikesComponents />} />
+					<Route path="unlikes" element={<DisLikeComponents />} />
+					<Route path="yourVideos" element={<YourVideosComponent />} />
+					<Route path="downloads" element={<DownloadsComponent />} />
+					<Route path="watchLater" element={<WatchLaterComponent />} />
+					<Route path="category" element={<AddCategory />} />
+					<Route path="*" element={<Series />} />
+				</Route> */}
 			{/* admin */}
 			<Route path="/admin-home" element={<Dashboard />} />
 			<Route path="/admin-shop" element={<AdminShop />} />

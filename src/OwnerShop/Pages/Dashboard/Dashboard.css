@@ -1,0 +1,25 @@
+.shop-dashboard-open{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    transition: all .5s ease-in-out;
+}
+.shop-dashboard-close{
+    display: grid;
+    grid-template-columns: 0% 100%;
+    transition: all .5s ease-in-out;
+   
+
+}
+
+@media screen and (max-width: 1200px) {
+    .shop-dashboard-open{
+        grid-template-columns: 0% 100% !important;
+    transition: all .5s ease-in-out;
+
+    }
+    .shop-dashboard-close{
+        
+        grid-template-columns: 0% 100% !important;
+        transition: all .5s ease-in-out;
+    }
+  }

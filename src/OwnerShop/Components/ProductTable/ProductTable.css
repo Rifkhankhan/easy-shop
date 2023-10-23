@@ -1,0 +1,26 @@
+table{
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-inline: auto;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+
+table th{
+   background-color: rgb(180, 26, 162);
+   color: white;
+   padding: 10px;
+}
+table tr:hover{
+    background-color: rgb(55, 242, 127);
+    color: rgb(16, 5, 60);
+    cursor: pointer;
+ }
+  @media screen and (max-width: 1200px) {
+    table{
+     margin-top: 2.5rem;
+    }
+  }
