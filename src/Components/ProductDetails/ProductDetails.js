@@ -24,6 +24,7 @@ const ProductDetails = () => {
 	const shop = useSelector(state => state.shop.shop)
 	const authData = useSelector(state => state.auth.authData)
 	const fruit = useSelector(state => state.fruit.fruit)
+	const [displayImage, setDisplayImage] = useState(fruit?.images ? fruit.images[0] : star)
 
 	const currentUrl = window.location.pathname;
 	console.log(currentUrl);
@@ -37,6 +38,13 @@ const ProductDetails = () => {
 	useEffect(() => {
 		dispatch(getFruit(id))
 	}, [id])
+
+	useEffect(() => {
+		console.log('run');
+		if(fruit?.images){
+			setDisplayImage(fruit?.images[0])
+		}
+	},[fruit])
 
 	useEffect(() => {
 		dispatch(getShop(fruit.shopId))
@@ -59,18 +67,24 @@ const ProductDetails = () => {
 		setModalOpen(status)
 	}
 
+	const pickImageHandler = e => {
+		console.log(e.currentTarget.getAttribute('src'))
+		setDisplayImage(e.currentTarget.getAttribute('src'))
+	}
+	
+
 	return (
 		<div className="product-details-root-container">
 			<p className='current-path'>{currentUrl}</p>
 			<div className="product-details-container">
 				<div className="product-details-images">
-				{fruit?.images?.map(image => <img src={image} alt="" />)}
+				{fruit?.images?.map(image => <img src={image} alt="" onClick={pickImageHandler}/>)}
 
 				
 				</div>
 				<div className="product-details-container-div">
 					<section className="product-details-image">
-						<img src={fruit?.images} alt="" />
+						<img src={displayImage} alt="" />
 					</section>
 					<section className="product-details-data">
 						<p className="product-details-desc">
