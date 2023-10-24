@@ -64,13 +64,13 @@ const ProductDetails = () => {
 			<p className='current-path'>{currentUrl}</p>
 			<div className="product-details-container">
 				<div className="product-details-images">
-					<img src={fruit.images} alt="" />
-					<img src={fruit.images} alt="" />
-					<img src={fruit.images} alt="" />
+				{fruit?.images?.map(image => <img src={image} alt="" />)}
+
+				
 				</div>
 				<div className="product-details-container-div">
 					<section className="product-details-image">
-						<img src={fruit.images} alt="" />
+						<img src={fruit?.images} alt="" />
 					</section>
 					<section className="product-details-data">
 						<p className="product-details-desc">

@@ -4,15 +4,16 @@ import './ViewProduct.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { authActions } from '../../../Redux/authSlice'
 import AddPostModel from '../../../Components/AddPostModel/AddPostModel'
-import { getFruit } from '../../../Actions/FruitAction'
+import { deleteImage, getFruit } from '../../../Actions/FruitAction'
 import LoadingModel from '../../../Admin/Components/LoadingModel/LoadingModel'
-import RealatedProductCorouselComponent from '../../../Components/RealatedProductCorouselComponent/RealatedProductCorouselComponent'
 import { getShop } from '../../../Actions/ShopAction'
+import { pushImage } from '../../../Actions/FruitAction'
 import star from '.././../../images/star.png'
 import rating from '../../../images/rating.png'
-import mouse from '../../../images/black-mouse.jpg'
-import man from '../../../images/hardik-sharma-CrPAvN29Nhs-unsplash.jpg'
+
 import plus from '../../../images/plus.png'
+import check from '../../../images/check.png'
+import axios from 'axios'
 
 // Task to do in this view page
 // 1. need to add new image
@@ -23,30 +24,44 @@ const ViewProduct = () => {
 	const { id } = useParams()
 	const dispatch = useDispatch()
 	const [modalOpen, setModalOpen] = useState(false)
-	const loading = useSelector(state => state.product.loading)
-	const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+
 	const shop = useSelector(state => state.shop.shop)
 	const authData = useSelector(state => state.auth.authData)
 	const fruit = useSelector(state => state.fruit.fruit)
-	const [selectedFile, setSelectedFile] = useState()
-	const [displayImage, setDisplayImage] = useState(fruit?.images)
+	
+	const [selectedAddingFile, setSelectedAddingFile] = useState()
+	const [selecteDeleteFile, setSelectedDeleteFile] = useState()
+	const [displayImage, setDisplayImage] = useState(fruit?.images ? fruit.images[0] : star)
+	// add image
+
+	const [addingFileInputState, setAddingFileInputState] = useState('')
+	const [deleteFileInputState, setDeleteFileInputState] = useState('')
+	const [previewAddingSource, setPreviewAddingSource] = useState()
 
 	// edit image
-	const [file, setFile] = useState()
-	const [previewUrl, setPreviewUrl] = useState()
-	const filePickerRef = useRef()
-	const imageRef = useRef()
+	const addingImageRef = useRef()
 
-	const [previewSource, setPreviewSource] = useState()
-	const [fileInputState, setFileInputState] = useState('')
-
-	//handling the image uploading
-	const handleFileInputChange = event => {
+	// image adding handler
+	const handleAddingImageFileInputChange = event => {
 		const file = event.target.files[0]
-		previewFile(file)
-		setSelectedFile(file)
-		setFileInputState(event.target.value)
+		previewAddingFile(file)
+		setSelectedAddingFile(file)
+		setAddingFileInputState(event.target.value)
 	}
+	//display a preview of adding uploaded image
+	const previewAddingFile = file => {
+		const reader = new FileReader()
+		reader.readAsDataURL(file)
+		reader.onloadend = () => {
+			setPreviewAddingSource(reader.result)
+		}
+	}
+	useEffect(() => {
+		console.log('run');
+		if(fruit?.images){
+			setDisplayImage(fruit?.images[0])
+		}
+	},[fruit])
 
 	// end edit image
 
@@ -85,90 +100,81 @@ const ViewProduct = () => {
 	}
 
 	// edit image handler
+
+	
 	const pickImageHandler = e => {
 		console.log(e.currentTarget.getAttribute('src'))
 		setDisplayImage(e.currentTarget.getAttribute('src'))
 	}
-	const pickHandler = e => {
-		let pickedFile
+	
 
-		if (e.target.files && e.target.files.length === 1) {
-			pickedFile = e.target.files[0]
-			setFile(pickedFile)
+	
+
+	const imageUploadHandler = async e => {
+		console.log('clicked');
+		e.preventDefault()
+		let imageUrl
+		let id
+
+		const formData = new FormData()
+		formData.append('file', selectedAddingFile)
+		formData.append('upload_preset', 'homedelivery')
+
+		try {
+			await axios
+				.post(
+					'https://api.cloudinary.com/v1_1/homedelivery/image/upload',
+					formData
+				)
+				.then(res => {
+					imageUrl = res.data.secure_url
+					id = res.data.public_id
+				})
+		} catch (error) {
+			alert(error)
 		}
-	}
-	const catchFileDataHandler = e => {
-		setSelectedFile(e)
-	}
 
-	//display a preview of uploaded image
-	const previewFile = file => {
-		const reader = new FileReader()
-		reader.readAsDataURL(file)
-		reader.onloadend = () => {
-			setPreviewSource(reader.result)
+		const data = {
+			url: imageUrl,
+			id: id
 		}
+		console.log(data);
+		dispatch(pushImage(fruit._id, data))
 	}
 
-	// const imageUploadHandler = async (e) => {
-	// 	e.preventDefault()
-	// 	let imageUrl;
-	// 	let id;
-
-	// 	const formData = new FormData()
-	// 	formData.append('file', selectedFile)
-	// 	formData.append('upload_preset', 'homedelivery')
-
-	// 	try {
-	// 	  await axios
-	// 		.post(
-	// 		  'https://api.cloudinary.com/v1_1/homedelivery/image/upload',
-	// 		  formData
-	// 		)
-	// 		.then(res => {
-
-	// 		  imageUrl = res.data.secure_url
-	// 		  id = res.data.public_id
-	// 		})
-	// 	} catch (error) {
-	// 	  alert(error)
-	// 	}
-
-	// 	const data = {
-	// 	  url:imageUrl,
-	// 	  id:id
-	// 	}
-	// 	dispatch(uploadProfilePhoto(authData._id,data))
-
-	//   }
+	const deleteHandler = () => {
+		dispatch(deleteImage(fruit._id,{id:displayImage}))
+	}
 
 	return (
 		<div className="view-product-details-root-container">
 			<div className="view-product-container">
 				<section className="product-details-image">
 					<div style={{ display: 'none' }}>
+					
 						<input
 							type="file"
 							name="image"
-							ref={imageRef}
-							onChange={handleFileInputChange}
-							value={fileInputState}
+							ref={addingImageRef}
+							onChange={handleAddingImageFileInputChange}
+							value={addingFileInputState}
 							accept="image/png, image/jpeg"
+
 						/>
 					</div>
-					{previewSource ? (
+					{previewAddingSource ? (
 						<img
-							src={previewSource}
+							src={previewAddingSource}
 							alt="preview"
 							className="editable-product-image"
-							onClick={() => imageRef?.current.click()}
 						/>
 					) : (
 						<img
 							src={displayImage}
 							className="editable-product-image"
 							alt="profile-image"
-							onClick={() => imageRef?.current.click()}
+							onClick={deleteHandler}
+						
 						/>
 					)}
 				</section>
@@ -196,31 +202,41 @@ const ViewProduct = () => {
 						<h3>in {shop.name}</h3>
 					</div>
 					<div className="product-images">
-						<input
-							type="file"
-							name=""
-							value=""
-							style={{ display: 'none' }}
-							accept=".jpg,.png,.jpeg"
-							onChange={pickHandler}
-							ref={filePickerRef}
-						/>
+						
 
-						<img
-							src={fruit.images}
-							onClick={pickImageHandler}
-							className="editable-product-image"
+						{fruit?.images?.map(image => 	<img
+								src={image}
+								className="editable-product-image"
+								alt=""
+								onClick={pickImageHandler}
+							
+							/>)}
+
+						{previewAddingSource ? (
+							<img
+								src={previewAddingSource}
+								className="editable-product-image"
+								alt=""
+								onClick={() => addingImageRef?.current.click()}
+
+							/>
+						) : (
+							<img style={{ display: 'none' }} alt="" />
+						)}
+					{!previewAddingSource ?	<img
+							src={plus}
 							alt=""
-						/>
+							className="plus-btn"
+							onClick={() => addingImageRef?.current.click()}
 
-						<img
-							src={man}
-							onClick={pickImageHandler}
-							className="editable-product-image"
+						/> : (
+							<img
+							src={check}
 							alt=""
-						/>
-
-						<img src={plus} alt="" className="plus-btn" />
+							className="plus-btn"
+							onClick={ imageUploadHandler}
+						/> 
+						)}
 					</div>
 					<div className="payment-details">
 						<button onClick={() => cardHandler(id)}>Add to card</button>

@@ -1,6 +1,7 @@
 const User = require('../Models/User');
 const ProductModel = require('../Models/ProductModel');
 const { v4: uuid } = require('uuid');
+
 exports.CreateProduct = async (req, res, next) => {
 	const url = req.protocol + '://' + req.get('host');
 
@@ -80,7 +81,7 @@ exports.getProduct = async (req, res, next) => {
 	} catch (err) {
 		return next(err);
 	}
-};
+};   
 
 //get all products of a shop
 exports.updateProduct = async (req, res, next) => {
@@ -88,13 +89,70 @@ exports.updateProduct = async (req, res, next) => {
 	console.log(req.body);
 	try {
 		const product = await ProductModel.findByIdAndUpdate(req.params.id, req.body, {
-				new: true
+				new: true  
 			});
 
 		res.json({product:product});
 	} catch (err) {
 		return next(err);
 	}
+};
+
+//push images
+exports.pushImages = async (req, res, next) => {
+	const {id} = req.params
+	console.log(id);
+	console.log(req.body);
+
+	try{
+		let product = await ProductModel.findById(id)
+		product.images.push(req.body.url)
+		await product.save();
+		console.log(product);
+		res.json(product);
+
+
+	}
+	catch (err) {
+		return next(err);
+	}
+	// try {
+	// 	const product = await ProductModel.findByIdAndUpdate(req.params.id, req.body, {
+	// 			new: true
+	// 		});
+
+	// 	res.json({product:product});
+	// } catch (err) {
+	// 	return next(err);
+	// }
+};
+
+//deleteImage 
+exports.deleteImage = async (req, res, next) => {
+	const {id} = req.params
+	try{
+		let product = await ProductModel.findById(id)
+
+		console.log(product.images.length);
+		await product.updateOne({$pull:{images:req.body.id}})    
+
+		console.log(product.images.length);
+		await product.save();
+		res.json(product);
+
+	}
+	catch (err) {
+		return next(err);
+	}
+	// try {
+	// 	const product = await ProductModel.findByIdAndUpdate(req.params.id, req.body, {
+	// 			new: true
+	// 		});
+
+	// 	res.json({product:product});
+	// } catch (err) {
+	// 	return next(err);
+	// }
 };
 exports.getWishList = async (req, res, next) => {
 	const {id} = req.params

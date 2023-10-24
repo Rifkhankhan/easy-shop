@@ -11,7 +11,7 @@ const Fruits = () => {
   useEffect(() => {
       dispatch(getProducts('fruits'))
   },[])
-
+  console.log(fruits);
   return <div className="fruit-container">
     <ItemList shops={fruits} />
   </div>;

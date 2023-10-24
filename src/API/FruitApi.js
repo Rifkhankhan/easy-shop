@@ -7,6 +7,8 @@ export const createFruit = (formData) => API.post('/product', formData);
 export const getFruit = (id) => API.get(`/product/fruits/${id}`);
 export const deleteFruit = (id) => API.delete(`/product/${id}`);
 export const updateFruit = (id,formData) => API.put(`/product/${id}`,formData);
+export const pushImage = (id,formData) => API.put(`/product/pushImage/${id}`,formData);
+export const deleteImage = (id,formData) => API.put(`/product/deleteImage/${id}`,formData);
 
 
 export const getFruits = () => API.get('/product/fruits');

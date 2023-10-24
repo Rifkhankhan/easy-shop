@@ -15,11 +15,29 @@ export const updateFruit = (id, formData) => async dispatch => {
 export const getFruit = id => async dispatch => {
 	// dispatch(FruitUiActions.changeAsLoading())
 	const { data } = await FruitApi.getFruit(id)
-	console.log(data)
+	
 	dispatch(fruitActions.getFruit(data[0]))
 	// dispatch(FruitUiActions.changeAsLoadingFinished())
 }
+export const pushImage = (id,formData) => async dispatch => {
+	// dispatch(FruitUiActions.changeAsLoading())
+	console.log(id)
+	const { data } = await FruitApi.pushImage(id,formData)
+	console.log(data)
+	dispatch(fruitActions.getFruit(data[0]))
+	window.location.reload()
 
+	// dispatch(FruitUiActions.changeAsLoadingFinished())
+}
+
+export const deleteImage = (id,formData) => async dispatch => {
+	// dispatch(FruitUiActions.changeAsLoading())
+	const { data } = await FruitApi.deleteImage(id,formData)
+	dispatch(fruitActions.getFruit(data[0]))
+	window.location.reload()
+
+	// dispatch(FruitUiActions.changeAsLoadingFinished())
+}
 export const deleteFruit = id => async dispatch => {
 	// dispatch(FruitUiActions.changeAsLoading())
 	FruitApi.deleteFruit(id)

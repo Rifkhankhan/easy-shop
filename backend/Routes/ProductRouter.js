@@ -5,7 +5,7 @@ const {CreateProduct, getProducts, getFruits, getFruit, likeItem,
      ,getShipList,cancelOrder,getCancelList,finishShipping,
      returnProduct,getReturns,getUserReturns,getAllShipped,getUserShipped,
      getUserCancelList,getCardList, getShopProducts, getProductsByType, deleteProduct, 
-     getProduct, updateProduct
+     getProduct, updateProduct, pushImages, deleteImage
 
     } = require('../Controllers/ProductController.js');
 var fileUpload = require('../Middleware/file-upload');
@@ -17,6 +17,8 @@ router.post('/', CreateProduct);
 router.get('/', getProducts);
 
 router.put('/:id', updateProduct);
+router.put('/pushImage/:id', pushImages);
+router.put('/deleteImage/:id', deleteImage);
 router.get('/:id', getProduct);
 router.get('/products/:type', getProductsByType);
 router.delete('/:id', deleteProduct);

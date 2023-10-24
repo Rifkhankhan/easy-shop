@@ -120,6 +120,7 @@ const previewFile = (file) => {
       url:imageUrl,
       id:id
     }
+    // console.log(data);
     dispatch(uploadProfilePhoto(authData._id,data))
 
   }

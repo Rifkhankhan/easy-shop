@@ -30,7 +30,7 @@ const Item = props => {
 	return (
 		<div className={styles.fruitcard}>
 			<img
-				src={props.images}
+				src={props.images[0]}
 				alt=""
 				className={styles.image}
 				onClick={shopDetailsHandler}

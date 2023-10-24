@@ -75,7 +75,6 @@ const ShopSideBar = ({ hideSideBar }) => {
 			setWindowDimensions(getWindowDimensions())
 		}
 
-		console.log(windowDimensions)
 		window.addEventListener('resize', handleResize)
 		return () => window.removeEventListener('resize', handleResize)
 	}, [windowDimensions])
